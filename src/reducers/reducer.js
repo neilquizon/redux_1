@@ -1,5 +1,6 @@
 const initialState = {
-    age:21
+    age:21,
+    fname:"No Name."
 }
 // The first parameter takes a default value if it is null. 
 const reducer = (state = initialState, action) => {
@@ -12,7 +13,11 @@ const reducer = (state = initialState, action) => {
             break;
         case 'AGE_DOWN':
             newState.age--;
-            break;     
+            break;  
+        case 'CHANGE_FIRSTNAME': newState.fname = action.payload;
+        break;
+    
+    
     }
     return newState;
 }
